@@ -2,41 +2,39 @@
 
 ## What I need?
 First of all you need the following technologies:
-* [PHP](https://www.php.net/manual/en/install.php)
-* [Composer](https://getcomposer.org/)
-* [MySQL](https://dev.mysql.com/downloads/installer/)
+* [NodeJS](https://nodejs.org/en/)
+* [MongoDB](https://www.mongodb.com/try/download/community)
+* [Pnpm](https://pnpm.io/) or `npm install -g pnpm`
+* [Typescript](https://www.npmjs.com/package/typescript) (Optional) or `npm install -g typescript`
+
+## Why pnpm?
+A little tip for you, reader, is that `pnpm` works like `npm` but it has a global storage, so, it make a shortcut of the cached dependencies to our projects and save a lot of space and time installing.
+
+## Spoiler
+![App Gif](https://media3.giphy.com/media/VDrRGXCXBLg5n40ajI/giphy.gif?cid=790b7611bdfedb8b756136918c66ce738fa7ab7dbd9ce2ac&rid=giphy.gif&ct=g)
 
 ## What to do now?
+Inside this project you have 2 spaces. One for the client and other for the server.
+
 You must to do the following instructions:
 
-1. Install PHP dependencies
+1. Go to server directory and install the dependencies
 ```bash
-composer install
+cd server
+pnpm install 
 ```
-2. Create a database into your MySQL
+2. Run the server
 ```bash
-mysql -u YOUR_MYSQL_USER -p # After this, use your password
-create database DATABASE_NAME # Use the name you wish
+npm run dev # You can access to it at localhost:3000
 ```
-3. Make a copy of `.env.example` and rename it as `.env`
+3. Open a new console and go to the client directory and install the dependencies
 ```bash
-cp .env.example .env # Create a copy in linyx
+cd client
+pnpm install
 ```
-4. Change the variables `DB_DATABASE`, `DB_USERNAME` and `DB_PASSWORD` with your credentials
+4. Run te server
 ```
-DB_DATABASE=YOUR_DATABASE_NAME
-DB_USERNAME=YOUR_MYSQL_USER
-DB_PASSWORD=YOUR_MYSQL_PASSWORD
+npm run dev
 ```
-5. Make the migrations of the database
-```bash 
-php artisan migrate
-```
-6. Start the server
-```bash
-php artisan serve # You can access to it at localhost:8000
-```
-7. As you see, there is no posts yet. If you want to see it, you must seed the database
-```bash
-php artisan db:seed
-```
+
+5. Enjoy!
