@@ -1,0 +1,9 @@
+<nav class="sticky top-0 bg-white">
+  <div class="container m-auto flex">
+    <a [routerLinkActive]="['border-blue-600', 'border-opacity-100', 'bg-gray-50']" [routerLinkActiveOptions]="{exact: true}" routerLink="" class="block p-4 border-b-2 hover:bg-gray-50 hover:border-opacity-100 hover:cursor-pointer">Home</a>
+    <a [routerLinkActive]="['border-blue-600', 'border-opacity-100', 'bg-gray-50']" routerLink="/form" class="block p-4 border-b-2 hover:bg-gray-50 hover:border-opacity-100 hover:cursor-pointer">Formulario</a>
+    <a [routerLinkActive]="['border-blue-600', 'border-opacity-100', 'bg-gray-50']" routerLink="/about" class="block p-4 border-b-2 hover:bg-gray-50 hover:border-opacity-100 hover:cursor-pointer">About</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

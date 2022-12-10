@@ -1,0 +1,14 @@
+<div class="px-4 py-2 flex border-t border-gray-300" [ngClass]="isLoading() ? 'opacity-50' : ''">
+    <input [disabled]="isLoading()" type="text" placeholder="Nueva característica" class="w-full bg-gray-50 border rounded-md rounded-r-none py-1 px-2 text-sm" #input>
+    <button [disabled]="isLoading()" class="py-1 px-3 text-white bg-blue-600 text-sm rounded-r-md disabled:cursor-not-allowed hover:cursor-pointer hover:bg-blue-500 flex-shrink-0" (click)="agregarCaracteristica(input)">
+        +
+    </button>
+</div>
+<ul class="p-4 pt-0">
+    <li *ngFor="let caracteristica of caracteristicas; let i = index">
+        <button [disabled]="isLoading()" class="py-1 px-2 inline rounded-md hover:bg-gray-200 text-xs disabled:opacity-40" (click)="eliminarCaracteristica(i)">
+            &#x2715;
+        </button>
+        <span [ngClass]="isLoading() ? 'opacity-50' : ''">{{caracteristica}}</span>
+    </li>
+</ul>

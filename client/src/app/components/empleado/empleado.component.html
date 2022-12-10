@@ -1,0 +1,18 @@
+<div class="bg-white rounded-md shadow-md overflow-hidden min-w-[240px]">
+    <div class="flex justify-between bg-blue-500 text-white text-sm uppercase font-bold">
+        <h3 class="p-3">Empleado {{ i + 1 }}</h3>
+        <button [disabled]="isLoading()" class=" disabled:opacity-50 disabled:cursor-not-allowed py-3 px-4 text-white hover:bg-red-700" (click)="eliminarEmpleado()">
+            &#x2715;
+        </button>
+    </div>
+    <a class="p-4 py-2 flex flex-col gap-3 hover:bg-gray-200" [routerLink]="['edit', empleado._id]">
+        <p><b>Nombre:</b> {{ empleado.nombre }}</p>
+        <p><b>Apellido:</b> {{ empleado.apellido }}</p>
+        <p><b>Edad:</b> {{ empleado.edad }}</p>
+        <p class="text-xs text-right text-gray-400">ID: {{ empleado._id }}</p>
+    </a>
+    <div>
+        <app-caracteristicas-empleado [caracteristicas]="empleado.caracteristicas" (onCreate)="agregarCaracteristica($event)" (onDelete)="eliminarCaracteristica($event)">
+        </app-caracteristicas-empleado>
+    </div>
+</div>

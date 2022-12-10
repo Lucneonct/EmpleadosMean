@@ -1,0 +1,20 @@
+<div class="w-full max-w-sm m-auto mt-5">
+    <div class="flex items-stretch flex-col gap-6">
+        <div class="w-full">
+            <p>Nombre:</p>
+            <input class="w-full p-2 rounded-md bg-white border border-gray-200" type="text" [(ngModel)]="nombre">
+        </div>
+        <div class="w-full">
+            <p>Apellido:</p>
+            <input class="w-full p-2 rounded-md bg-white border border-gray-200" type="text" [(ngModel)]="apellido">
+        </div>
+        <div class="w-full">
+            <p>Edad:</p>
+            <input class="w-full p-2 rounded-md bg-white border border-gray-200" type="number" [(ngModel)]="edad">
+        </div>
+    </div>
+    <div class="w-full mt-2" style="display: block;">
+        <input [disabled]="isLoading()" class="disabled:opacity-50 disabled:cursor-not-allowed py-2 px-6 bg-blue-600 hover:bg-blue-500 hover:cursor-pointer rounded-md text-white w-full text-center" type="button"
+            value="Añadir" (click)="agregarEmpleado()">
+    </div>
+</div>
